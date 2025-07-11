@@ -67,10 +67,17 @@ async function startBot() {
       try {
         // Send clickable invite link using Markdown
         await bot.sendMessage(
-          userId,
-          `👋 Hello, ${firstName}!\n\nTo complete your request, please also request to join this channel:\n[Join here](${config.ABC_LINK})\n\nOnce you’ve requested that, you’ll be approved in this group.`,
-          { parse_mode: 'Markdown' }
-        );
+  userId,
+  `👋 Hello, ${firstName}!\n\nTo complete your request, please also join the sub channel below. Once done, you’ll be approved in this group.`,
+  {
+    reply_markup: {
+      inline_keyboard: [
+        [{ text: '📎 Join Sub Channel', url: config.ABC_LINK }]
+      ]
+    }
+  }
+);
+
       } catch (err) {
         console.error(`❌ Failed to message user ${userId}:`, err.message);
       }
