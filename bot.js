@@ -269,3 +269,4 @@ async function startBot() {
 startBot().catch((err) => {
   console.error('Failed to start bot:', err);
 });
+//new code
