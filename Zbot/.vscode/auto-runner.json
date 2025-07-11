@@ -1,0 +1,11 @@
+{
+  "frontend": {
+    "path": "frontend",
+    "command": "npm run dev"
+  },
+  "backend": {
+    "path": "backend",
+    "command": ""
+  },
+  "autoRun": true
+}
